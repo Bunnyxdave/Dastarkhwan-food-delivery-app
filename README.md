@@ -45,7 +45,16 @@ npm run lint      # Run ESLint
 
 The home and cart pages request restaurant listings for Hyderabad using the Swiggy API via the URL configured in `src/assets/restaurantData.js`. The API/proxy may reject requests or change its response; in that case, the pages show a loading error rather than fabricated listings.
 
-The cart is a front-end demonstration. Its restaurant prices are estimates derived from the API's “cost for two” field; they are not menu prices. Placing an order does not submit payment or contact a restaurant. Cart state is held in React memory and resets when the app is reloaded.
+## Important cautions
+
+- **Front-end demo only:** This project is a client-side React application. It has no backend, database, or production ordering infrastructure.
+- **No real authentication:** Login and sign-up only validate form fields in the browser and display a demo message. They do not create accounts, verify identities, or securely authenticate users. Do not enter real passwords or sensitive information.
+- **No real orders or payments:** Cart actions and order confirmation are simulated. No order is sent to a restaurant, and no payment is processed.
+- **Estimated prices:** Cart prices are estimates derived from the restaurant API's “cost for two” field, not real menu item prices or a guaranteed quote. The delivery fee is a demo value.
+- **Temporary cart state:** Cart contents live only in React memory and reset on reload; they are not saved to an account or browser storage.
+- **External API and images:** Restaurant data and images depend on Swiggy and third-party hosting. Requests can fail, be blocked by the proxy, return changed data, or be unavailable. An error message does not necessarily indicate an issue with the app itself.
+- **Demo contact information:** Contact details displayed in the app are sample content and may not correspond to a real business.
+- **Not production-ready:** Do not use this app to make real purchases or submit personal, payment, or account credentials.
 
 ## Project structure
 
